@@ -3,9 +3,6 @@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script type="text/javascript">
 $.widget.bridge('uibutton', $.ui.button);
-$(function() {
-    $('.dropdown-toggle').dropdown();
-});
 </script>
 <script src="{{ URL::asset('packages/almasaeed2010/adminlte/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
@@ -14,7 +11,7 @@ $(function() {
 <script src="{{ URL::asset('packages/almasaeed2010/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}" type="text/javascript"></script>
 <script src="{{ URL::asset('packages/almasaeed2010/adminlte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}" type="text/javascript"></script>
 <script src="{{ URL::asset('packages/almasaeed2010/adminlte/plugins/knob/jquery.knob.js') }}" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment-with-locales.min.js"></script>
 <script src="{{ URL::asset('packages/almasaeed2010/adminlte/plugins/daterangepicker/daterangepicker.js') }}" type="text/javascript"></script>
 <script src="{{ URL::asset('packages/almasaeed2010/adminlte/plugins/datepicker/bootstrap-datepicker.js') }}" type="text/javascript"></script>
 <script src="{{ URL::asset('packages/almasaeed2010/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}" type="text/javascript"></script>
