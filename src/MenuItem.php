@@ -33,7 +33,6 @@ class MenuItem {
             $content = $this->htmlBuilder->tag('i', [
                     'class' => [
                         'fa',
-                        'fa-fw',
                         $this->menuItem->getIcon()
                     ]
                 ]
@@ -46,22 +45,23 @@ class MenuItem {
                 $subitemsContent .= $item->render($level);
             }
             $content .= $this->htmlBuilder->tag('ul', ['class' => 'treeview-menu'], $subitemsContent);
+            $class = ['class' => 'treeview'];
         } else {
             $content = $this->renderSingleItem();
+            $class = [];
         }
-        return $this->htmlBuilder->tag('li', [], $content);
+        return $this->htmlBuilder->tag('li', $class, $content);
     }
 
     protected function renderSingleItem() {
         $content = $this->htmlBuilder->tag('i', [
                 'class' => [
                     'fa',
-                    'fa-fw',
                     $this->menuItem->getIcon()
                 ]
             ]
         );
-        $content .= ' ' . $this->menuItem->getLabel();
+        $content .= ' ' . $this->htmlBuilder->tag('span', [], $this->menuItem->getLabel());
         return $this->htmlBuilder->tag('a', ['href' => $this->menuItem->getUrl()], $content);
     }
 

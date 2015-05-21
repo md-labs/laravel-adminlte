@@ -7,26 +7,10 @@
 
 	<title>{{{ $pageTitle }}}</title>
 
-	@foreach (\SleepingOwl\Admin\AssetManager\AssetManager::styles() as $style)
-		<link media="all" type="text/css" rel="stylesheet" href="{{ $style }}" >
-	@endforeach
-
-    <style>
-        /* Override SleepingOwl all.min.css conflicts */
-        .sidebar { width: inherit; margin-top: inherit; }
-        .sidebar ul li { border: none; }
-        .sidebar ul li a.active { background-color: transparent; }
-    </style>
-
     @include('adminlte::_layout.css')
-
-	@foreach (\SleepingOwl\Admin\AssetManager\AssetManager::scripts() as $script)
-		<script src="{{ $script }}"></script>
-	@endforeach
-</head>
-<body class="skin-red">
-    @yield('content')
-
     @include('adminlte::_layout.js')
+</head>
+<body class="skin-red sidebar-mini">
+    @yield('content')
 </body>
 </html>
