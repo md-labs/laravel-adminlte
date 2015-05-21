@@ -1,6 +1,6 @@
 <?php
 
 return [
-	'title'          => '<b>Admin</b>LTE',
-	'title-short'          => '<b>A</b>LT',
+	'title'          => '<b>A</b>LT',
+	'title-short'    => '<b>Admin</b>LTE',
 ];
