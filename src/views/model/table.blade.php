@@ -21,7 +21,7 @@
                     <div class="box-header with-border">
                         <a class="btn btn-primary navbar-btn" {{ $modelItem->isCreatable() ? '' : 'disabled' }} href="{{{ $newEntryRoute }}}"><i class="fa fa-plus"></i> {{{ Lang::get('admin::lang.table.new-entry') }}}</a>
                     </div>
-                    <div class="box-body table-responsive">
+                    <div class="box-body">
                         <table class="table table-condensed table-hover" id="dataTable" {!! $modelItem->renderTableAttributes() !!}>
                             <thead>
                             <tr>
