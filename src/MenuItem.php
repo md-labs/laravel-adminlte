@@ -37,7 +37,7 @@ class MenuItem {
                     ]
                 ]
             );
-            $content .= ' ' . $this->menuItem->getLabel() . $this->htmlBuilder->tag('span', ['class' => 'fa arrow']);
+			$content .= ' ' . $this->renderLabel($level) . $this->htmlBuilder->tag('i', ['class' => 'fa fa-angle-left pull-right']);
             $content = $this->htmlBuilder->tag('a', ['href' => '#'], $content);
 
             $subitemsContent = '';
@@ -47,13 +47,13 @@ class MenuItem {
             $content .= $this->htmlBuilder->tag('ul', ['class' => 'treeview-menu'], $subitemsContent);
             $class = ['class' => 'treeview'];
         } else {
-            $content = $this->renderSingleItem();
+            $content = $this->renderSingleItem($level);
             $class = [];
         }
         return $this->htmlBuilder->tag('li', $class, $content);
     }
 
-    protected function renderSingleItem() {
+    protected function renderSingleItem($level) {
         $content = $this->htmlBuilder->tag('i', [
                 'class' => [
                     'fa',
@@ -61,8 +61,16 @@ class MenuItem {
                 ]
             ]
         );
-        $content .= ' ' . $this->htmlBuilder->tag('span', [], $this->menuItem->getLabel());
+		$content .= ' ' . $this->renderLabel($level);
         return $this->htmlBuilder->tag('a', ['href' => $this->menuItem->getUrl()], $content);
     }
+
+	protected function renderLabel($level) {
+		if ($level == 1) {
+	        return ' ' . $this->htmlBuilder->tag('span', [], $this->menuItem->getLabel());
+		} else {
+	        return ' ' . $this->menuItem->getLabel();
+		}
+	}
 
 }
