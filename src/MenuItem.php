@@ -29,7 +29,6 @@ class MenuItem {
             return true;
         }
         if ($this->menuItem->hasSubItems()) {
-            $level++;
             $content = $this->htmlBuilder->tag('i', [
                     'class' => [
                         'fa',
@@ -40,6 +39,7 @@ class MenuItem {
 			$content .= ' ' . $this->renderLabel($level) . $this->htmlBuilder->tag('i', ['class' => 'fa fa-angle-left pull-right']);
             $content = $this->htmlBuilder->tag('a', ['href' => '#'], $content);
 
+            ++$level;
             $subitemsContent = '';
             foreach ($this->menuItem->getItems() as $item) {
                 $subitemsContent .= $item->render($level);
